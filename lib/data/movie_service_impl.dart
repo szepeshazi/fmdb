@@ -15,6 +15,7 @@ class MovieServiceImpl implements MovieService {
   @override
   Future<List<Movie>> list() async {
     try {
+      await Future<void>.delayed(const Duration(milliseconds: 1500));
       final uri = Uri.parse(endpoint);
       final response = await _client.get(uri);
       final jsonResponse = jsonDecode(response.body) as List;

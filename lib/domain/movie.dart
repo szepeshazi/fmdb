@@ -4,14 +4,6 @@ part 'movie.freezed.dart';
 
 part 'movie.g.dart';
 
-/// A view model class used for application-wide state management
-/// Contains the result of a repository fetch operation, and optionally a selected movie the user clicked on
-@freezed
-class MovieListView with _$MovieListView {
-  const factory MovieListView({required MovieListResponse response, Movie? selectedMovie}) = _MovieListView;
-}
-
-
 /// A union class that encompasses different states that can happen when
 /// fetching a list of movies from a 3rd party API
 @freezed

@@ -13,8 +13,8 @@ final movieServiceProvider = Provider<MovieService>((ref) => MovieServiceImpl(re
 final movieRepositoryProvider = Provider<MovieRepository>((ref) => MovieRepositoryImpl(ref.read(movieServiceProvider)));
 
 /// A [StateNotifier] for managing application-wide state and state updates
-class MovieListNotifier extends StateNotifier<MovieListView> {
-  MovieListNotifier(this.ref) : super(const MovieListView(response: MovieListResponse.loading())) {
+class MovieListNotifier extends StateNotifier<MovieListResponse> {
+  MovieListNotifier(this.ref) : super(const MovieListResponse.loading()) {
     _loadMovies();
   }
 
@@ -25,14 +25,8 @@ class MovieListNotifier extends StateNotifier<MovieListView> {
   /// Update state once finished
   Future<void> _loadMovies() async {
     final response = await ref.read(movieRepositoryProvider).list();
-    state = MovieListView(response: response);
+    state = response;
   }
-
-  /// Select a movie to display detailed view
-  void select(Movie movie) => state = state.copyWith(selectedMovie: movie);
-
-  /// Cancel previous movie selection, hide detailed view
-  void cancelSelection() => state = state.copyWith(selectedMovie: null);
 }
 
-final moviesProvider = StateNotifierProvider<MovieListNotifier, MovieListView>((ref) => MovieListNotifier(ref));
+final moviesProvider = StateNotifierProvider<MovieListNotifier, MovieListResponse>((ref) => MovieListNotifier(ref));

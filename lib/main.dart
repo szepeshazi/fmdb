@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:fmdb/presentation/movie_list_widget.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'presentation/pageshell/movies_home_widget.dart';
 
 void main() {
   runApp(const ProviderScope(child: FakeMovieWrapperWidget()));
@@ -11,25 +13,14 @@ class FakeMovieWrapperWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
     return MaterialApp(
       title: 'The Fake Movie Database',
       theme: ThemeData(
-        primarySwatch: Colors.cyan,
+        primarySwatch: Colors.blueGrey,
+        textTheme: GoogleFonts.poppinsTextTheme(textTheme),
       ),
       home: const FakeMovieHomeWidget(),
-    );
-  }
-}
-
-class FakeMovieHomeWidget extends StatelessWidget {
-  const FakeMovieHomeWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: MoviesHomeWidget(),
-      ),
     );
   }
 }
