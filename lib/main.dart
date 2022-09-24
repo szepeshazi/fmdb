@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fmdb/presentation/movie_list_widget.dart';
 
 void main() {
-  runApp(const FakeMovieWrapperWidget());
+  runApp(const ProviderScope(child: FakeMovieWrapperWidget()));
 }
 
 class FakeMovieWrapperWidget extends StatelessWidget {
@@ -20,13 +22,13 @@ class FakeMovieWrapperWidget extends StatelessWidget {
 }
 
 class FakeMovieHomeWidget extends StatelessWidget {
-  const FakeMovieHomeWidget({Key? key}) : super(key: key);
+  const FakeMovieHomeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('The Fake Movie Database - Home'),
+        child: MoviesHomeWidget(),
       ),
     );
   }
