@@ -11,3 +11,7 @@ list).
 The package demonstrates the use of popular Flutter packages, patterns and best practices. 
 Although Flutter build target has been exclusively set for `web`, the project could easily target
 other platforms (Android, iOS, etc) as well.
+
+## Demo
+
+You can see the build Flutter web application in action [here](https://fluffy-e2db1.web.app/)
