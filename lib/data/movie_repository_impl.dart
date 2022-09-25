@@ -1,6 +1,5 @@
-import 'package:fmdb/data/movie_repository.dart';
-import 'package:fmdb/domain/movie.dart';
-
+import '../domain/movie.dart';
+import 'movie_repository.dart';
 import 'movie_service.dart';
 
 /// A movie repository implementation that encapsulates a lower level service to fetch movies

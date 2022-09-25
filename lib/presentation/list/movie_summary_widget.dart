@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../domain/movie.dart';
-import '../pageshell/movies_home_widget.dart';
+import '../../main.dart';
 
 class MovieSummaryWidget extends StatelessWidget {
   const MovieSummaryWidget({super.key, required this.movie, required this.index});
@@ -16,10 +16,12 @@ class MovieSummaryWidget extends StatelessWidget {
       elevation: 3,
       child: TextButton(
         onPressed: () {
-          context.push('/${FakeMovieHomeWidget.viewPathName}/$index',);
+          context.push(
+            '/${MainRouterWidget.viewPathName}/$index',
+          );
         },
         child: SizedBox(
-          width: 350,
+          width: 310,
           child: Padding(
             padding: const EdgeInsets.all(24.0),
             child: Column(

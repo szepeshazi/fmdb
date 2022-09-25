@@ -1,26 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:fmdb/state/movie_providers.dart';
 
 import '../../domain/movie.dart';
 import 'movie_summary_widget.dart';
-
-class MoviesHomeWidget extends ConsumerWidget {
-  const MoviesHomeWidget({super.key});
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final movieResponse = ref.watch(moviesProvider);
-    return Center(
-      child: movieResponse.when(
-          success: (List<Movie> movies) => MovieListWidget(movies: movies),
-          error: (String message) => Center(
-                child: Text(message),
-              ),
-          loading: () => const CircularProgressIndicator()),
-    );
-  }
-}
 
 class MovieListWidget extends StatelessWidget {
   const MovieListWidget({super.key, required this.movies});

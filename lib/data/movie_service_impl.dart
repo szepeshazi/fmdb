@@ -1,9 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:fmdb/data/movie_service.dart';
-import 'package:fmdb/domain/movie.dart';
 import 'package:http/http.dart' as http;
+
+import '../domain/movie.dart';
+import 'movie_service.dart';
 
 class MovieServiceImpl implements MovieService {
   MovieServiceImpl(this._client);

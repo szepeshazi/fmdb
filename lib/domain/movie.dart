@@ -4,7 +4,7 @@ part 'movie.freezed.dart';
 
 part 'movie.g.dart';
 
-/// A union class that encompasses different states that can happen when
+/// A union class encapsulating different states that can happen when
 /// fetching a list of movies from a 3rd party API
 @freezed
 class MovieListResponse with _$MovieListResponse {

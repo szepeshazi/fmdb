@@ -1,10 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:fmdb/data/cors_proxy.dart';
-import 'package:fmdb/data/movie_repository.dart';
-import 'package:fmdb/data/movie_repository_impl.dart';
-import 'package:fmdb/data/movie_service.dart';
-import 'package:fmdb/data/movie_service_impl.dart';
-import 'package:fmdb/domain/movie.dart';
+
+import '../data/cors_proxy.dart';
+import '../data/movie_repository.dart';
+import '../data/movie_repository_impl.dart';
+import '../data/movie_service.dart';
+import '../data/movie_service_impl.dart';
+import '../domain/movie.dart';
 
 final corsProxyProvider = Provider<CorsProxyClient>((_) => CorsProxyClient());
 

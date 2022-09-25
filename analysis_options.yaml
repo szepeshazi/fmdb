@@ -84,6 +84,7 @@ linter:
     - prefer_is_not_empty
     - prefer_is_not_operator
     - prefer_null_aware_operators
+    - prefer_relative_imports
     - prefer_typing_uninitialized_variables
     - prefer_void_to_null
     - provide_deprecation_message
