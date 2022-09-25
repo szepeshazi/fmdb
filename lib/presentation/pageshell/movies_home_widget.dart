@@ -12,7 +12,7 @@ class MoviesHomeWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(120),
         child: PageHeaderWidget(),
       ),
       body: child,

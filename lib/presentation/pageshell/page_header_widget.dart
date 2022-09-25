@@ -12,7 +12,7 @@ class PageHeaderWidget extends StatelessWidget {
         children: [
           Icon(Icons.movie_creation_outlined, size: 48, color: Theme.of(context).colorScheme.primary,),
           const SizedBox(width: 24),
-          Flexible(child: Text('The Fake Movie Database', style: Theme.of(context).textTheme.headline5)),
+          Flexible(child: Text('The Fake Movie Database', style: Theme.of(context).textTheme.headline6)),
         ],
       ),
     );
